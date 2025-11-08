@@ -45,8 +45,7 @@ conda activate cap6415-img2vid
 ```
 ## Repository Structure
 
-
-.
+```bash
 ├── src/
 │   ├── generate_frames.py        # Text-to-Image frame generation
 │   ├── refine_frames.py          # Image-to-Image refinement / motion
@@ -63,3 +62,4 @@ conda activate cap6415-img2vid
 ├── .gitignore                    # Ignore rules (Python + outputs)
 ├── LICENSE                       # MIT License
 └── README.md                     # Project description
+```
