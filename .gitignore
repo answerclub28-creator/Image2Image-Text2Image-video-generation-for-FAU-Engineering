@@ -1,9 +1,33 @@
+# === Python & Environment ===
 __pycache__/
 *.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
 .venv/
 venv/
+env/
+.env
+*.env
+
+# === OS & IDE ===
 .DS_Store
 .vscode/
+.idea/
+
+# === Jupyter ===
 .ipynb_checkpoints/
+
+# === Project Outputs ===
 results/*.tmp
 results/*.log
+results/*.mp4
+results/*.png
+results/*.jpg
+notebooks/*.csv
+notebooks/*.h5
+
+# === Misc ===
+*.swp
+*.bak
