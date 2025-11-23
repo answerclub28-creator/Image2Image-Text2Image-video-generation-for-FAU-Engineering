@@ -8,14 +8,23 @@
 ---
 
 ## 🎯 Abstract
-Visualizations that are realistic, yet creative, help both engineering research and education at FAU.
-The project will develop a **hybrid AI video generation pipeline** that leverages **Text-to-Image (T2I)** and **Image-to-Image (I2I)** diffusion models to generate short, AI-generated video clips depicting **FAU Engineering themes**, including robotics, ocean engineering, autonomous drones, and smart manufacturing.
+AI-generated visualizations play an increasingly large role in engineering research, simulations, and educational demonstrations.
+This project covers a **hybrid AI video generation pipeline** based on **Text-to-Image (T2I)** and **Image-to-Image (I2I)** transformation concepts.
 
-Our method first leverages a Text-to-Image model (Stable Diffusion/SDXL) for generating the first frame from a descriptive prompt, such as "FAU robotics engineer calibrating a drone inside a modern lab".
-Then, an **Image-to-Image refinement stage**-with ControlNet or AnimateDiff-develops that frame into a short sequence of images showing motion or lighting change.
+The system conceptually follows three major stages:
 
-Finally, the frames are stitched into a smooth video with OpenCV. It is a modular, reproducible system and was prepared for future FAU-specific dataset fine-tuning. All the code is documented, and all results are reproducible with scripts provided.
+1. **Text-to-Image Generation:**
+A frame is generated from a descriptive engineering-themed prompt; examples include "*FAU engineering drone lab with multiple sensors and LED lighting*".
 
+Currently, this step is simulated using a lightweight **mock diffusion pipeline** to ensure **full reproducibility across all devices** without requiring GPUs or large model downloads.
+2. **Image-to-Image Refinement:**
+
+The initial frame can be refined or changed so as to simulate small variations including those resulting from lighting, motion, and angle changes.
+
+A lightweight placeholder version is implemented to demonstrate the pipeline architecture. 
+3. **Video Assembly:** These generated or refined frames are combined to form a short engineering-themed video clip using some simple frame-to-video utility. 
+
+The whole repository is meant to be **portable**, **lightweight**, and **fully reproducible** on any system, Windows, macOS, Linux, without specific hardware or authentication requirements.
 ---
 
 ## ⚙️ Installation & Setup
@@ -45,19 +54,38 @@ conda activate cap6415-img2vid
 
 ```bash
 ├── src/
-│   ├── generate_frames.py        # Text-to-Image frame generation
-│   ├── refine_frames.py          # Image-to-Image refinement / motion
-│   └── frames_to_video.py        # Combine frames into a video
+│   ├── generate_frames.py        # Mock Text-to-Image frame generator (Week 3)
+│   ├── refine_frames.py          # Image-to-Image refinement placeholder
+│   └── frames_to_video.py        # Combine frames into a video (FFMPEG/ImageIO)
 │
-├── notebooks/                    # Optional notebooks for experiments
 ├── results/
-│   ├── frame_000.png
-│   └── week2_frames/             # Week 2 placeholder frames
-├── week1log.txt                  # Weekly progress log (Week 1 example)
+│   ├── week2_frames/             # Frames generated during Week 2
+│   ├── week3_frames/             # Mock ONNX frames (Week 3 output)
+│   └── frame_000.png             # Example starting frame
+│
+├── models/
+│   └── onnx/                     # Contains config files only (no large ONNX binaries)
+│
+├── week1log.txt                  # Weekly progress log
+├── week2log.txt
+├── week3log.txt
+│
 ├── requirements.txt              # Python dependencies
-├── environment.yml               # Conda environment
-├── demo_video_script.md          # Video presentation outline
-├── .gitignore                    # Ignore rules (Python + outputs)
+├── environment.yml               # Conda environment file
+│
+├── demo_video_script.md          # Outline for final project presentation video
 ├── LICENSE                       # MIT License
-└── README.md                     # Project description
+└── README.md                     #Projectdocumentation (this file)
+```
+
+
+## Running the Project
+
+### Generate frames (mock Text-to-Image)
+```bash 
+python src/generate_frames.py
+```
+### Convert frames to video
+```bash
+python src/frames_to_video.py
 ```

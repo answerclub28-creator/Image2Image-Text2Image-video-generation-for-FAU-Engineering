@@ -1,9 +1,13 @@
 name: cap6415-img2vid
 channels:
-  - pytorch
+  - defaults
   - conda-forge
 dependencies:
   - python=3.10
   - pip
   - pip:
-      - -r requirements.txt
+      - pillow
+      - imageio
+      - numpy
+      - diffusers==0.29.0
+      - onnxruntime
