@@ -1,0 +1,5 @@
+pillow==9.5.0
+imageio==2.27.0
+numpy
+diffusers==0.29.0
+onnxruntime

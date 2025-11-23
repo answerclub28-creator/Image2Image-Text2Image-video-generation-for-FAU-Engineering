@@ -1,0 +1,67 @@
+# ==========================
+# PYTHON & ENVIRONMENTS
+# ==========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.venv/
+venv/
+env/
+.env
+*.env
+
+# ==========================
+# OS & EDITOR FILES
+# ==========================
+.DS_Store
+._*
+.vscode/
+.idea/
+Thumbs.db
+
+# ==========================
+# JUPYTER NOTEBOOKS
+# ==========================
+.ipynb_checkpoints/
+
+# ==========================
+# PROJECT OUTPUTS
+# ==========================
+
+# Allow saved frames (Week 2 & Week 3)
+!results/week2_frames/
+!results/week3_frames/
+
+# Ignore auto-generated video or temporary files
+results/*.tmp
+results/*.log
+results/*.mp4
+
+# Don't ignore images inside week folders
+results/*.png
+results/*.jpg
+
+# ==========================
+# MODELS
+# ==========================
+
+# Ignore large ONNX binaries but keep config files
+models/onnx/*.onnx
+
+# Keep JSON / tokenizer files
+!models/onnx/*.json
+!models/onnx/*.txt
+
+# ==========================
+# MISC BACKUPS
+# ==========================
+*.swp
+*.bak
+
+# ==========================
+# TRASH / SYSTEM JUNK
+# ==========================
+__MACOSX/
