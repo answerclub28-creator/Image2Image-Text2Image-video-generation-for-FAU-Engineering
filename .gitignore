@@ -2,6 +2,7 @@
 __pycache__/
 *.py[cod]
 *.pyo
+*.pyc
 *.pyd
 *.so
 *.egg-info/
@@ -27,7 +28,3 @@ results/*.png
 results/*.jpg
 notebooks/*.csv
 notebooks/*.h5
-
-# === Misc ===
-*.swp
-*.bak
