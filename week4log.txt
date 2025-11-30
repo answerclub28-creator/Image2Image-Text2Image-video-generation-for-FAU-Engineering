@@ -1,0 +1,8 @@
+Week 4 Log (Nov 24 – Nov 30, 2025)
+
+• Recreated the project environment using a clean conda setup (cv_video, Python 3.11).
+• Installed dependencies from requirements.txt and verified that the installation completes without errors.
+• Ran the baseline script src/generate_frames.py to simulate a mock Text-to-Image pipeline and generate the first set of synthetic frames.
+• Executed src/frames_to_video.py to convert the generated frames into an animation. Since ffmpeg was not available, the script correctly fell back to GIF output and produced week3_demo.gif.
+• Confirmed that the pipeline runs end-to-end on CPU, producing visual output under the results/ directory.
+• Marked this run as the base sanity-check for the more modular pipeline (generate_frames → refine_frames → frames_to_video) to be developed in Week 5.
